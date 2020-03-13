@@ -1,0 +1,23 @@
+syntax = "proto2";
+
+message NetworkSetting {
+    required string ip = 1;
+    required string mask = 2;
+    required string gateway = 3;
+    required string dns1 = 4;
+    optional string dns2 = 5;
+}
+
+message Account {
+    required string username = 1;
+    required string password = 2;
+    required int32 level = 3;
+}
+
+message Config {
+    required string config_version = 1;
+    required string firmware_version = 2;
+    required string device_identification = 3;
+    required NetworkSetting network_setting = 4;
+    repeated Account accounts = 5;
+}
